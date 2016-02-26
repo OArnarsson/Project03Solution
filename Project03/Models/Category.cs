@@ -16,7 +16,7 @@ namespace Project03.Models
             if (myProducts.Count == 0)
             {
                 myProducts.Add(new Product { name = "Cool hat", categoryID = 0, description = "Probably one of the coolest hats you will never see.", price = 9.99, stock = 1 });
-                myProducts.Add(new Product { name = "Pair of socks", categoryID = 0, description = "I used to get cold feet, now I have socks.", price = 3.99, stock = 9 });
+                myProducts.Add(new Product { name = "Pair of socks", categoryID = 3, description = "I used to get cold feet, now I have socks.", price = 3.99, stock = 9 });
                 myProducts.Add(new Product { name = "Dank weed", categoryID = 0, description = "This is some dank weed, son.", price = 50.99, stock = 3 });
                 myProducts.Add(new Product { name = "Golf balls", categoryID = 4, description = "A pretty shitty golf ball if you ask me.", price = 0.99, stock = 100 });
                 myProducts.Add(new Product { name = "Tan lotion", categoryID = 4, description = "This shit smells like BBQ sauce.", price = 7.99, stock = 12 });
@@ -29,11 +29,42 @@ namespace Project03.Models
         public List<Product> GetProductsByCategoryID (int id)
         {
             List <Product> inCategory = (from Product in myProducts where Product.categoryID == id select Product).ToList();
+
+            if(inCategory.Count == 0)
+            {
+                myProducts.Add(new Product { name = "No products!", categoryID = 999, description = "", price = 0, stock = 0 });
+            }
                              
 
             return inCategory;
         }
-        
-            
+
+        public Product GetProductByID(int id)
+        {
+           var result = (from Product in myProducts where Product.productID == id select Product).SingleOrDefault();
+
+            return result;
+        }
+
+        public void AddProduct(Product prod)
+        {
+            prod.productID = (from Product in myProducts
+                              select prod.productID).Max() + 1;
+
+            myProducts.Add(prod);
+        }
+
+        public void UpdateProduct(Product prod)
+        {
+            for (int i = 0; i < myProducts.Count; i++)
+            {
+                if (prod.productID == myProducts[i].productID)
+                {
+                    myProducts[i] = prod;
+                    break;
+                }
+            }
+        }
+
     }
 }
