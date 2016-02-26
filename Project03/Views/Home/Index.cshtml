@@ -13,6 +13,15 @@
     
     <div class="container-fluid">
         <div class="row">
+            
+            <div class="col-md-12">
+                <div class="col-md-3">
+                    <h1>Products</h1>
+                </div>
+            </div>
+
+        </div>
+        <div class="row">
             <div class="col-md-12">
                 <button type="button" class="btn btn-primary btn-lg active">All Caregories</button>
                 <button type="button" class="btn btn-default btn-lg inactive">Category</button>
@@ -24,22 +33,25 @@
                 <button type="button" class="btn btn-default btn-lg inactive">Category</button>
             </div>
         </div>
+
+
+        <!--Creates a div for each product in the list on run time.-->
+        <div class="row">
+            @foreach (var prod in Model)
+            {
+
+                <div class="col-md-3">
+                    <h3>@prod.name<br></h3>
+                    <p>
+                        @prod.description<br> <br>
+                        Price: @prod.price$ <br> <br>
+                        Stock: @prod.stock <br>
+                    </p>
+                </div>
+            }
+        </div>
     </div>
 
-    <!--Creates a div for each product in the list on run time.-->
-    <div class="row">
-        @foreach (var prod in Model)
-        {
-            <div class="col-md-3">
-                <h3>@prod.name<br></h3>
-                <p> 
-                    @prod.description<br> <br> 
-                    Price: @prod.price$ <br> <br> 
-                    Stock: @prod.stock <br>
-                </p>
-            </div>
-        }
-     </div>
 </body>
 
 
