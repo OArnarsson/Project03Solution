@@ -31,5 +31,44 @@ namespace Project03.Controllers
 
             return View();
         }
+
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            if (id != null)
+            {
+                Category category = new Category();
+                var model = category.GetProductByID(Convert.ToInt32(id));
+                return View(model);
+            }
+
+            else return View("NotFound");
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int id, FormCollection formData)
+        {
+            Category category = new Category();
+            Product prod = category.GetProductByID(id);
+            if (prod != null)
+            {
+                UpdateModel(prod);
+                category.UpdateProduct(prod);
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View("NotFound");
+            }
+        }
+        public ActionResult Category(int CatId)
+        {               
+            Category category = new Category();
+            var model = category.GetProductsByCategoryID(CatId);
+            ViewBag.Active = CatId;
+            return View("Index",model);
+            
+        }
+
     }
 }

@@ -3,56 +3,106 @@
     ViewBag.Title = "Home Page";
 }
 
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Browse products</title>
-</head>
-
-<body>
+<style>
+    .oneItem {
+        margin-top: 10px;
+        border:solid 2px #2f81ea;
+        border-radius: 12px;       
+        background-color: #fffffa;
+        padding:5px;
+    }
+    .categories{
+        margin-top:15px;
+        margin-bottom:15px;
+    }
+    .itemContent{
+        min-height:200px;
+    }
+    .itemFooter{
+        margin-bottom:5px;
+    }
     
-    <div class="container-fluid">
-        <div class="row">
-            
-            <div class="col-md-12">
-                <div class="col-md-3">
-                    <h1>Products</h1>
+ 
+    
+</style>
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Products</h3>
                 </div>
             </div>
 
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <button type="button" class="btn btn-primary btn-lg active">All Caregories</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-                <button type="button" class="btn btn-default btn-lg inactive">Category</button>
-            </div>
-        </div>
-
-
-        <!--Creates a div for each product in the list on run time.-->
-        <div class="row">
-            @foreach (var prod in Model)
-            {
-
-                <div class="col-md-3">
-                    <h3>@prod.name<br></h3>
-                    <p>
-                        @prod.description<br> <br>
-                        Price: @prod.price$ <br> <br>
-                        Stock: @prod.stock <br>
-                    </p>
+            <div class="row categories">
+                <div class="col-md-12">
+                    @{                         
+                        int category1 = 1;
+                        int category2 = 2;
+                        int category3 = 3;
+                        int category4 = 4;
+                    }
+                    @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md active" })
+                    @Html.ActionLink("Category 1", "Category", "Home", new { CatId = category1 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 2", "Category", "Home", new { CatId = category2 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 3", "Category", "Home", new { CatId = category3 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 4", "Category", "Home", new { CatId = category4 },   new { @class = "btn btn-primary btn-md inactive" })
                 </div>
-            }
+            </div>
+
+
+            <!--Creates a div for each product in the list on run time.-->
+            <div class="row">
+               
+                @foreach (var prod in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="oneItem">
+
+                            @*<img class="img-responsive displayd" src="@Url.Content(@item.Image)" style="text-align:center" alt="test" />*@
+                            <div class="itemContent">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>@prod.name</h4>
+                                        <hr />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-12">
+                                        <p>@prod.description</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6">
+                                        <p>Price: @prod.price $</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6">
+                                        <p>Stock: @prod.stock pcs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr/>
+                                <div class="itemFooter">
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" class="btn btn-default btn-md inactive">
+                                            <span class="glyphicon glyphicon-edit" aria-hidden="true">Edit</span>
+                                        </button>
+                                    </div>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
         </div>
     </div>
 
-</body>
-
-
-</html>
+</div>
