@@ -198,6 +198,8 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\NotFound.cshtml" />
     <Content Include="Views\Home\Edit.cshtml" />
+    <Content Include="Views\Shared\EditingView.cshtml" />
+    <Content Include="Views\Home\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -44,12 +44,20 @@
                         int category2 = 2;
                         int category3 = 3;
                         int category4 = 4;
+                        int category5 = 5;
+                        int category6 = 6;
+                        int category7 = 7;
+                        int category8 = 8;
                     }
                     @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md active" })
                     @Html.ActionLink("Category 1", "Category", "Home", new { CatId = category1 },   new { @class = "btn btn-primary btn-md inactive" })
                     @Html.ActionLink("Category 2", "Category", "Home", new { CatId = category2 },   new { @class = "btn btn-primary btn-md inactive" })
                     @Html.ActionLink("Category 3", "Category", "Home", new { CatId = category3 },   new { @class = "btn btn-primary btn-md inactive" })
                     @Html.ActionLink("Category 4", "Category", "Home", new { CatId = category4 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 5", "Category", "Home", new { CatId = category5 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 6", "Category", "Home", new { CatId = category6 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 7", "Category", "Home", new { CatId = category7 },   new { @class = "btn btn-primary btn-md inactive" })
+                    @Html.ActionLink("Category 8", "Category", "Home", new { CatId = category8 },   new { @class = "btn btn-primary btn-md inactive" })
                 </div>
             </div>
 
@@ -91,7 +99,7 @@
                                 <div class="itemFooter">
                                     <div class="col-md-12 text-center">
                                         <button type="button" class="btn btn-default btn-md inactive">
-                                            <span class="glyphicon glyphicon-edit" aria-hidden="true">Edit</span>
+                                            @Html.ActionLink("Edit this item", "Edit", new { id = prod.productID })
                                         </button>
                                     </div>
                                 </div>

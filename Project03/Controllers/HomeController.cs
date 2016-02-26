@@ -61,6 +61,7 @@ namespace Project03.Controllers
                 return View("NotFound");
             }
         }
+
         public ActionResult Category(int CatId)
         {               
             Category category = new Category();
@@ -68,6 +69,20 @@ namespace Project03.Controllers
             ViewBag.Active = CatId;
             return View("Index",model);
             
+        }
+
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View(new Product());
+        }        [HttpPost]
+        public ActionResult Create(FormCollection formData)
+        {
+            Product prod = new Product();
+            UpdateModel(prod);
+            Category category = new Category();
+            category.AddProduct(prod);
+            return RedirectToAction("Index");
         }
 
     }

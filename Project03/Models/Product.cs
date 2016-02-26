@@ -6,7 +6,7 @@ using System.Web;
 namespace Project03.Models
 {
     public class Product
-    {
+    {   
         public int productID { get; set; }
         public string name { get; set; }
         public string description { get; set; }
