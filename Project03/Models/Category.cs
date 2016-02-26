@@ -22,9 +22,9 @@ namespace Project03.Models
                 myProducts.Add(new Product { productID = 4, name = "Tan lotion", categoryID = 1, description = "This shit smells like BBQ sauce.", price = 7.99, stock = 12 });
                 myProducts.Add(new Product { productID = 5, name = "Amazing hat", categoryID = 2, description = "A true hats only legends dare to own", price = 1050, stock = 4 });
                 myProducts.Add(new Product { productID = 6, name = "Pair of pants", categoryID = 2, description = "I used to get cold feet, now I have socks, and those pants match any socks available", price = 13.99, stock = 9 });
-                myProducts.Add(new Product { productID = 7, name = "Pure Muhammed Kushin", categoryID = 3, description = "Mashaala mahaed achmad, khaliiiiiiiiiiD!", price = 130.99, stock = 5 });
+                myProducts.Add(new Product { productID = 7, name = "Pure Muhammed Kushin", categoryID = 6, description = "Mashaala mahaed achmad, khaliiiiiiiiiiD!", price = 130.99, stock = 5 });
                 myProducts.Add(new Product { productID = 8, name = "Ex-men's balls", categoryID = 4, description = "A pretty bad balls if u ask me, unable to contain the load", price = 0.99, stock = 100 });
-                myProducts.Add(new Product { productID = 9, name = "Tan motion", categoryID = 2, description = "This Dance group is the hottest crew available, pay extra and you can have them smelling like BBQ sauce.", price = 7.99, stock = 12 });
+                myProducts.Add(new Product { productID = 9, name = "Tan motion", categoryID = 8, description = "This Dance group is the hottest crew available, pay extra and you can have them smelling like BBQ sauce.", price = 7.99, stock = 12 });
             }
 
             return myProducts;
