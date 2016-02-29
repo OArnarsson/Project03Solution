@@ -93,6 +93,7 @@ namespace Project03.Controllers
             }
             else
             {
+                PopulateDropDown();
                 return View(model);
             }
                 
