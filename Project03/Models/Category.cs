@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
+using System.Web.Mvc;
 
 namespace Project03.Models
 {
@@ -53,8 +54,9 @@ namespace Project03.Models
 
         public void AddProduct(Product prod)
         {
-            prod.productID = (from Product in myProducts
-                              select prod.productID).Max() + 1;
+            prod.productID = myProducts.Count; 
+            //(from Product in myProducts
+            //select prod.productID).Max() + 1;
 
             myProducts.Add(prod);
         }
@@ -70,6 +72,6 @@ namespace Project03.Models
                 }
             }
         }
-
+        
     }
 }

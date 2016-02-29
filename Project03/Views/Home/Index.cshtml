@@ -10,13 +10,14 @@
         border-radius: 12px;       
         background-color: #fffffa;
         padding:5px;
+
     }
     .categories{
-        margin-top:15px;
-        margin-bottom:15px;
+        margin-top:5px;
+        margin-bottom:5px;
     }
     .itemContent{
-        min-height:200px;
+        min-height:220px;
     }
     .itemFooter{
         margin-bottom:5px;
@@ -33,31 +34,21 @@
 
             <div class="row">
                 <div class="col-md-12">
-                    <h3>Products</h3>
+                    <h3>Products @ViewBag.Categories</h3>
                 </div>
             </div>
 
-            <div class="row categories">
-                <div class="col-md-12">
-                    @{                         
-                        int category1 = 1;
-                        int category2 = 2;
-                        int category3 = 3;
-                        int category4 = 4;
-                        int category5 = 5;
-                        int category6 = 6;
-                        int category7 = 7;
-                        int category8 = 8;
-                    }
-                    @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md active" })
-                    @Html.ActionLink("Category 1", "Category", "Home", new { CatId = category1 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 2", "Category", "Home", new { CatId = category2 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 3", "Category", "Home", new { CatId = category3 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 4", "Category", "Home", new { CatId = category4 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 5", "Category", "Home", new { CatId = category5 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 6", "Category", "Home", new { CatId = category6 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 7", "Category", "Home", new { CatId = category7 },   new { @class = "btn btn-primary btn-md inactive" })
-                    @Html.ActionLink("Category 8", "Category", "Home", new { CatId = category8 },   new { @class = "btn btn-primary btn-md inactive" })
+            <div class="row ">
+                <div class="col-md-12 ">                   
+                    @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md active categories" })                  
+                    @Html.ActionLink("Category 1", "Category", "Home", new { CatId = 1 },   new { @class = "btn btn-primary btn-md active categories" })                   
+                    @Html.ActionLink("Category 2", "Category", "Home", new { CatId = 2 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 3", "Category", "Home", new { CatId = 3 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 4", "Category", "Home", new { CatId = 4 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 5", "Category", "Home", new { CatId = 5 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 6", "Category", "Home", new { CatId = 6 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 7", "Category", "Home", new { CatId = 7 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                    @Html.ActionLink("Category 8", "Category", "Home", new { CatId = 8 },   new { @class = "btn btn-primary btn-md inactive categories" })
                 </div>
             </div>
 
