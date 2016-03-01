@@ -1,9 +1,9 @@
 ﻿@model IEnumerable<Project03.Models.Product>
 @{
     ViewBag.Title = "Home Page";
+    Styles.Render("~/Content/Site.css");
 }
 
-@Styles.Render("~/Content/Site.css")
 
 
 <div class="container-fluid">
@@ -11,7 +11,7 @@
         <div class="col-md-12">
             <div class="row">
                 <div class="col-md-8">
-                    <h3 class="inLiner">Products @ViewBag.Categories</h3>
+                    <h3 class="inLiner">Products</h3>
                     @Html.ActionLink("Create a new item", "Create", "Home", new { @class = "btn btn-success btn-md" })
                     <p> <br> </p>
                 </div>
@@ -52,12 +52,12 @@
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-12">
                                         <p class="bold">Price: @prod.price $</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-6 col-md-6">
+                                    <div class="col-md-12">
                                         <p class="bold">Stock: @prod.stock pcs.</p>
                                     </div>
                                 </div>

@@ -106,39 +106,39 @@ namespace Project03.Controllers
             {
                 case 1:
                     ViewBag.Categories = "/Books & Audible";
-                    ViewBag.Categories1 = " active";
+                    ViewBag.Categories1 = " btn btn-info";
                     break;
                 case 2:
                     ViewBag.Categories = "/Movies, Music & Games";
-                    ViewBag.Categories2 = " active";
+                    ViewBag.Categories2 = " btn btn-info";
                     break;
                 case 3:
                     ViewBag.Categories = "/Electronics & Computers";
-                    ViewBag.Categories3 = " active";
+                    ViewBag.Categories3 = " btn btn-info";
                     break;
                 case 4:
                     ViewBag.Categories = "/Home, Garden  & Tools";
-                    ViewBag.Categories4 = " active";
+                    ViewBag.Categories4 = " btn btn-info";
                     break;
                 case 5:
                     ViewBag.Categories = "/Beauty, Health & Grocery";
-                    ViewBag.Categories5 = " active";
+                    ViewBag.Categories5 = " btn btn-info";
                     break;
                 case 6:
                     ViewBag.Categories = "/Toys, Kids & Baby";
-                    ViewBag.Categories6 = " active";
+                    ViewBag.Categories6 = " btn btn-info";
                     break;
                 case 7:
                     ViewBag.Categories = "/Clothing, Shoes & Jewelry";
-                    ViewBag.Categories7 = " active";
+                    ViewBag.Categories7 = " btn btn-info";
                     break;
                 case 8:
                     ViewBag.Categories = "/Sport & Outdoors";
-                    ViewBag.Categories8 = " active";
+                    ViewBag.Categories8 = " btn btn-info";
                     break;
                 case 9:
                     ViewBag.Categories = "/Automotive & Industrial";
-                    ViewBag.Categories9 = " active";
+                    ViewBag.Categories9 = " btn btn-info";
                     break;
                 default:
                     ViewBag.Categories = "";
