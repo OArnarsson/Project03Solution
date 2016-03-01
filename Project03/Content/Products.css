@@ -1,0 +1,21 @@
+﻿
+.oneItem {
+        margin-top: 10px;
+        border: solid 2px #2f81ea;
+        border-radius: 12px;
+        background-color: #fffffa;
+        padding: 5px;
+    }
+
+    .categories {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+
+    .itemContent {
+        min-height: 220px;
+    }
+
+    .itemFooter {
+        margin-bottom: 5px;
+    }

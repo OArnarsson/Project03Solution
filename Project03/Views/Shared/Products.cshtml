@@ -1,0 +1,64 @@
+﻿@model IEnumerable<Project03.Models.Product>
+<link href="~/Content/Site.css" rel="stylesheet" />
+
+<div class="container-fluid">
+
+    <div class="row">
+        <div class="col-md-offset-1 col-md-10">
+
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>Products @ViewBag.Categories</h3>
+                </div>
+            </div>
+            <div class="row">
+                @foreach (var prod in Model)
+                {
+                    <div class="col-md-4">
+                        <div class="oneItem">
+
+                            @*<img class="img-responsive displayd" src="@Url.Content(@item.Image)" style="text-align:center" alt="test" />*@
+                            <div class="itemContent">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <h4>@prod.name</h4>
+                                        <hr />
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-12 col-md-12">
+                                        <p>@prod.description</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6">
+                                        <p>Price: @prod.price $</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xs-6 col-md-6">
+                                        <p>Stock: @prod.stock pcs.</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <hr />
+                                <div class="itemFooter">
+                                    <div class="col-md-12 text-center">
+                                        <button type="button" class="btn btn-default btn-md inactive">
+                                            @Html.ActionLink("Edit this item", "Edit", new { id = prod.productID })
+                                        </button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
