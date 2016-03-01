@@ -53,3 +53,7 @@ hr{
     border:0;
     margin-bottom:5px;
 }
+
+.inLiner{
+    display : inline-block;
+}
