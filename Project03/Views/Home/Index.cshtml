@@ -16,15 +16,15 @@
             <div class="row ">
                 <div class="col-md-12 ">
                     @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md categories" })
-                    @Html.ActionLink("Books & Audible", "Category", "Home", new { CatId = 1 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Movies, Music & Games", "Category", "Home", new { CatId = 2 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Electronics & Computers", "Category", "Home", new { CatId = 3 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Home, Garden & Tools", "Category", "Home", new { CatId = 4 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Beauty, Health & Grocery", "Category", "Home", new { CatId = 5 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Toys, Kids & Baby", "Category", "Home", new { CatId = 6 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Clothing, Shoes & Jewelry", "Category", "Home", new { CatId = 7 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Sport & Outdoors", "Category", "Home", new { CatId = 8 }, new { @class = "btn btn-default categories" })
-                    @Html.ActionLink("Automotive & Industrial", "Category", "Home", new { CatId = 9 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Books & Audible", "Category", "Home", new { CatId = 1 }, new { @class = "btn btn-default categories"+@ViewBag.Categories1 })
+                    @Html.ActionLink("Movies, Music & Games", "Category", "Home", new { CatId = 2 }, new { @class = "btn btn-default categories" + @ViewBag.Categories2 })
+                    @Html.ActionLink("Electronics & Computers", "Category", "Home", new { CatId = 3 }, new { @class = "btn btn-default categories" + @ViewBag.Categories3 })
+                    @Html.ActionLink("Home, Garden & Tools", "Category", "Home", new { CatId = 4 }, new { @class = "btn btn-default categories" + @ViewBag.Categories4 })
+                    @Html.ActionLink("Beauty, Health & Grocery", "Category", "Home", new { CatId = 5 }, new { @class = "btn btn-default categories" + @ViewBag.Categories5 })
+                    @Html.ActionLink("Toys, Kids & Baby", "Category", "Home", new { CatId = 6 }, new { @class = "btn btn-default categories" + @ViewBag.Categories6 })
+                    @Html.ActionLink("Clothing, Shoes & Jewelry", "Category", "Home", new { CatId = 7 }, new { @class = "btn btn-default categories" + @ViewBag.Categories7 })
+                    @Html.ActionLink("Sport & Outdoors", "Category", "Home", new { CatId = 8 }, new { @class = "btn btn-default categories" + @ViewBag.Categories8 })
+                    @Html.ActionLink("Automotive & Industrial", "Category", "Home", new { CatId = 9 }, new { @class = "btn btn-default categories" + @ViewBag.Categories9 })
                 </div>
             </div>
 

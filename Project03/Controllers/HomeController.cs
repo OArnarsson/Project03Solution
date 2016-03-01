@@ -68,12 +68,12 @@ namespace Project03.Controllers
         {
             Category category = new Category();
             var model = category.GetProductsByCategoryID(CatId);
-            ViewBag.Categories = " : Category "+CatId;
-            ViewBag.Active = CatId;
-            
+            GetCategoryName(CatId);
+
             return View("Index", model);
 
         }
+        
 
         [HttpGet]
         public ActionResult Create()
@@ -97,6 +97,53 @@ namespace Project03.Controllers
                 return View(model);
             }
                 
+        }
+
+        public void GetCategoryName(int cat)
+        {
+            int caseSwitch = cat;
+            switch (caseSwitch)
+            {
+                case 1:
+                    ViewBag.Categories = "/Books & Audible";
+                    ViewBag.Categories1 = " active";
+                    break;
+                case 2:
+                    ViewBag.Categories = "/Movies, Music & Games";
+                    ViewBag.Categories2 = " active";
+                    break;
+                case 3:
+                    ViewBag.Categories = "/Electronics & Computers";
+                    ViewBag.Categories3 = " active";
+                    break;
+                case 4:
+                    ViewBag.Categories = "/Home, Garden  & Tools";
+                    ViewBag.Categories4 = " active";
+                    break;
+                case 5:
+                    ViewBag.Categories = "/Beauty, Health & Grocery";
+                    ViewBag.Categories5 = " active";
+                    break;
+                case 6:
+                    ViewBag.Categories = "/Toys, Kids & Baby";
+                    ViewBag.Categories6 = " active";
+                    break;
+                case 7:
+                    ViewBag.Categories = "/Clothing, Shoes & Jewelry";
+                    ViewBag.Categories7 = " active";
+                    break;
+                case 8:
+                    ViewBag.Categories = "/Sport & Outdoors";
+                    ViewBag.Categories8 = " active";
+                    break;
+                case 9:
+                    ViewBag.Categories = "/Automotive & Industrial";
+                    ViewBag.Categories9 = " active";
+                    break;
+                default:
+                    ViewBag.Categories = "";
+                    break;
+            }
         }
         public void PopulateDropDown()
         {

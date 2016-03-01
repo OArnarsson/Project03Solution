@@ -22,11 +22,11 @@ namespace Project03.Models
         public int categoryID { get; set; }
 
         [Required(ErrorMessage = "Price is required")]
-        [Range(0, 1000000, ErrorMessage = "Price can not be lower than 0")]
+        [Range(0, int.MaxValue, ErrorMessage = "Price can not be lower than 0")]
         public double price { get; set; }
 
         [Required(ErrorMessage = "Stock is required")]
-        [Range(0,1000000, ErrorMessage = "Stock must be in the range of 0-1000000")]
+        [Range(0, int.MaxValue, ErrorMessage = "Stock must be in the range of 0-1000000")]
         public int stock { get; set; }
     }
 }
