@@ -102,14 +102,15 @@ namespace Project03.Controllers
         {
             //Populate the available dropdown categories
             List<SelectListItem> categories = new List<SelectListItem>();
-            SelectListItem item1 = new SelectListItem { Text = "Category1", Value = "1" };
-            SelectListItem item2 = new SelectListItem { Text = "Category2", Value = "2" };
-            SelectListItem item3 = new SelectListItem { Text = "Category3", Value = "3" };
-            SelectListItem item4 = new SelectListItem { Text = "Category4", Value = "4" };
-            SelectListItem item5 = new SelectListItem { Text = "Category5", Value = "5" };
-            SelectListItem item6 = new SelectListItem { Text = "Category6", Value = "6" };
-            SelectListItem item7 = new SelectListItem { Text = "Category7", Value = "7" };
-            SelectListItem item8 = new SelectListItem { Text = "Category8", Value = "8" };
+            SelectListItem item1 = new SelectListItem { Text = "Books & Audible", Value = "1" };
+            SelectListItem item2 = new SelectListItem { Text = "Movies, Music & Games", Value = "2" };
+            SelectListItem item3 = new SelectListItem { Text = "Electronics & Computers", Value = "3" };
+            SelectListItem item4 = new SelectListItem { Text = "Home, Garden  & Tools", Value = "4" };
+            SelectListItem item5 = new SelectListItem { Text = "Beauty, Health & Grocery", Value = "5" };
+            SelectListItem item6 = new SelectListItem { Text = "Toys, Kids & Baby", Value = "6" };
+            SelectListItem item7 = new SelectListItem { Text = "Clothing, Shoes & Jewelry", Value = "7" };
+            SelectListItem item8 = new SelectListItem { Text = "Sport & Outdoors", Value = "8" };
+            SelectListItem item9 = new SelectListItem { Text = "Automotive & Industrial", Value = "9" };
 
             categories.Add(item1);
             categories.Add(item2);
@@ -119,6 +120,7 @@ namespace Project03.Controllers
             categories.Add(item6);
             categories.Add(item7);
             categories.Add(item8);
+            categories.Add(item9);
             // etc., add more items as needed
             ViewData["Categories"] = categories;
         }

@@ -23,3 +23,33 @@ select,
 textarea {
     max-width: 280px;
 }
+/*Style for one product*/
+.oneItem {
+        margin-top: 10px;
+        border:solid 2px #2f81ea;
+        border-radius: 12px;       
+        background-color: #fffffa;
+        padding:5px;
+
+    }
+    .categories{
+        margin-top:5px;
+        margin-bottom:5px;
+    }
+    .itemContent{
+        height:220px;
+    }
+    .itemFooter{
+        margin-bottom:5px;
+    }
+    .bold{
+        font-weight:bold;
+    }
+    
+hr{
+    margin-bottom:0;
+}
+.moremargin{
+    border:0;
+    margin-bottom:5px;
+}

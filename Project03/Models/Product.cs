@@ -14,10 +14,11 @@ namespace Project03.Models
         public string name { get; set; }
 
         [Required(ErrorMessage = "Description is required")]
+        [StringLength(300, MinimumLength = 3)]
         public string description { get; set; }
 
         [Required(ErrorMessage = "Catageory is required")]
-        [Range(0, 8, ErrorMessage = "Category must be in the range of 0-8")]
+        [Range(0, 9, ErrorMessage = "Category must be in the range of 0-9")]
         public int categoryID { get; set; }
 
         [Required(ErrorMessage = "Price is required")]

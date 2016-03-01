@@ -3,90 +3,66 @@
     ViewBag.Title = "Home Page";
 }
 
-<style>
-    .oneItem {
-        margin-top: 10px;
-        border:solid 2px #2f81ea;
-        border-radius: 12px;       
-        background-color: #fffffa;
-        padding:5px;
-
-    }
-    .categories{
-        margin-top:5px;
-        margin-bottom:5px;
-    }
-    .itemContent{
-        min-height:220px;
-    }
-    .itemFooter{
-        margin-bottom:5px;
-    }
-    
- 
-    
-</style>
-
 <div class="container-fluid">
-
     <div class="row">
-        <div class="col-md-offset-1 col-md-10">
-
+        <div class="col-md-12">
             <div class="row">
-                <div class="col-md-12">
-                    <h3>Products @ViewBag.Categories</h3>
+                <div class="col-md-8">
+                    <h3 class="inLiner">Products @ViewBag.Categories</h3>
+                    @Html.ActionLink("Create a new item", "Create", "Home", new { @class = "btn btn-success btn-md" })
+                    <p> <br> </p>
                 </div>
             </div>
-
             <div class="row ">
-                <div class="col-md-12 ">                   
-                    @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md active categories" })                  
-                    @Html.ActionLink("Category 1", "Category", "Home", new { CatId = 1 },   new { @class = "btn btn-primary btn-md active categories" })                   
-                    @Html.ActionLink("Category 2", "Category", "Home", new { CatId = 2 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 3", "Category", "Home", new { CatId = 3 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 4", "Category", "Home", new { CatId = 4 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 5", "Category", "Home", new { CatId = 5 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 6", "Category", "Home", new { CatId = 6 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 7", "Category", "Home", new { CatId = 7 },   new { @class = "btn btn-primary btn-md inactive categories" })
-                    @Html.ActionLink("Category 8", "Category", "Home", new { CatId = 8 },   new { @class = "btn btn-primary btn-md inactive categories" })
+                <div class="col-md-12 ">
+                    @Html.ActionLink("All Products", "Index", "Home", new { @class = "btn btn-primary btn-md categories" })
+                    @Html.ActionLink("Books & Audible", "Category", "Home", new { CatId = 1 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Movies, Music & Games", "Category", "Home", new { CatId = 2 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Electronics & Computers", "Category", "Home", new { CatId = 3 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Home, Garden & Tools", "Category", "Home", new { CatId = 4 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Beauty, Health & Grocery", "Category", "Home", new { CatId = 5 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Toys, Kids & Baby", "Category", "Home", new { CatId = 6 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Clothing, Shoes & Jewelry", "Category", "Home", new { CatId = 7 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Sport & Outdoors", "Category", "Home", new { CatId = 8 }, new { @class = "btn btn-default categories" })
+                    @Html.ActionLink("Automotive & Industrial", "Category", "Home", new { CatId = 9 }, new { @class = "btn btn-default categories" })
                 </div>
             </div>
-
 
             <!--Creates a div for each product in the list on run time.-->
             <div class="row">
-               
+
                 @foreach (var prod in Model)
                 {
-                    <div class="col-md-4">
+                    <div class="col-md-4 col-sm-6 ">
                         <div class="oneItem">
-
                             @*<img class="img-responsive displayd" src="@Url.Content(@item.Image)" style="text-align:center" alt="test" />*@
                             <div class="itemContent">
-                                <div class="row">
-                                    <div class="col-md-12">
-                                        <h4>@prod.name</h4>
+                                <div class="row ">
+                                    <div class="col-md-12 itemHeader">
+                                        <h4 class="bold">@prod.name</h4>
                                         <hr />
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-12 col-md-12">
+                                    <div class="col-md-12">
                                         <p>@prod.description</p>
                                     </div>
                                 </div>
                                 <div class="row">
-                                    <div class="col-xs-6 col-md-6">
-                                        <p>Price: @prod.price $</p>
+                                    <div class="col-md-6">
+                                        <p class="bold">Price: @prod.price $</p>
                                     </div>
                                 </div>
                                 <div class="row">
                                     <div class="col-xs-6 col-md-6">
-                                        <p>Stock: @prod.stock pcs.</p>
+                                        <p class="bold">Stock: @prod.stock pcs.</p>
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
-                                <hr/>
+                                <div class="moremargin">
+                                    <hr />
+                                </div>
                                 <div class="itemFooter">
                                     <div class="col-md-12 text-center">
                                         <button type="button" class="btn btn-default btn-md inactive">
@@ -94,14 +70,12 @@
                                         </button>
                                     </div>
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
                 }
             </div>
-
         </div>
     </div>
-
 </div>
